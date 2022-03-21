@@ -1,0 +1,13 @@
+body {
+    background-color: steelblue;
+}
+
+img {
+    max-width: 100px;
+    height: auto;
+
+}
+
+a {
+    text-decoration-color: #1b1e21;
+}
