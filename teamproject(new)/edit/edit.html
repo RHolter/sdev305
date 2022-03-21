@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Edit Facility Form</title>
+
+  <!-- additional CSS -->
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- tab icon can go here  -->
+
+  <!--  Favicon  -->
+  <link rel="icon" type="image/png" href="../images/Logo2.png">
+
+</head>
+<body>
+<div id="main" class="container">
+  <div class="jumbotron">
+    <h1 class="display-4">Admin Edit</h1>
+    <p class="lead">Edit Facility Information</p>
+    <hr class="my-4">
+    <p>For Edits:  Please confirm the new information is accurate.</p>
+    <p> If information is unknown, please type N/A</p>
+
+  </div>
+  <form id="facility-form" action ="confirm.php" method="post">
+    <!-- ADMINDinput -->
+    <fieldset class="form-group">
+      <legend class="col-sm-2 pt-1">Facility Information</legend>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label class="form-class-label" for="fname">Facility Name</label>
+          <input class="form-control" type="text" id="fname" name="fname" placeholder="Enter Facility's Name">
+          <span class="err" id="err-fname">Please enter a Facility</span>
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-class-label" for="location">Location</label>
+          <input class="form-control" type="text" id="location" name="location" class="form-control" placeholder="Please enter City and State">
+          <span class="err" id="err-location">Please enter a Location</span>
+        </div>
+      </div>
+      <!-- form groups -->
+      <div class="form-row">
+        <div class="form-groups col-md-6">
+          <label class="form-class-label" for="fmrn">Medical Records Phone Number</label>
+          <input type="text" id="fmrn" name="fmrn" class="form-control" placeholder="Enter phone number or N/A">
+        </div>
+        <div class="form-groups col-md-6">
+          <label class="form-class-label" for="ffmrn">Medical Records Fax Number</label>
+          <input type="text" id="ffmrn" name="ffmrn" class="form-control" placeholder="Enter phone number or N/A">
+        </div>
+      </div>
+
+      <!-- form groups -->
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label class="form-class-label" for="ffln">Film Library Number</label>
+          <input type="text" id="ffln" name="ffln" class="form-control" placeholder="Enter phone number or N/A">
+        </div>
+        <div class="form-group col-md-6">
+          <label class="form-class-label" for="fmrn">Film Library Fax Number</label>
+          <input type="text" id="fflfn" name="fflfn" class="form-control" placeholder="Enter fax number or N/A">
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- push radio buttons -->
+    <fieldset class="form-row">
+      <legend class="col-sm-2 pt-0">Films</legend>
+      <div class="form-group">
+        <label class="d-block">Are the images pushable?</label>
+        <div class="form-check-label form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" id="yes" name="push" value="Yes" checked>Yes
+          </label>
+        </div> <!-- form groups -->
+
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" id="no" name="push" value="No">No
+          </label>
+        </div>
+        <!-- form groups -->
+
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" id="no*" name="push" value="No*">No*
+          </label>
+        </div>
+      </div>
+    </fieldset>
+    <!-- form groups -->
+    <fieldset class="form-row">
+      <legend class="col-sm-2 pt-0">Film Types</legend>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="ct" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox1">CT</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="dexa" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox2">Dexa</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="mammogram" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox3">MG</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="mri" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox4">MRI</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="path" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox5">PATH</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="ultrasound" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox6">US</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="xray" name="film[]">
+        <label class="form-check-label" for="inlineCheckbox3">XR</label>
+      </div>
+    </fieldset>
+
+    <!--Submit button goes here -->
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="scripts/script.js"></script>
+
+</body>
+</html>
